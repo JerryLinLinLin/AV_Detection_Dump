@@ -10,7 +10,7 @@
 
 ## About <a name = "about"></a>
 
-This project contains the CSV files of malware detection names from Antivirus software, and a PowerShell script for dumping the detection entries.
+This project contains the CSV files of malware detection names from antivirus software, and a PowerShell script for dumping the detection entries.
 
 ## Getting Started <a name = "getting_started"></a>
 
