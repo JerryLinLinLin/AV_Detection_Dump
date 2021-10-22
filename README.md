@@ -34,6 +34,6 @@ To run PowerShell Script
 
 | Name         | PPL | Need to Disable SP | Detection Source | Accuracy |
 | ------------ | --- | ------------------ | ---------------- | -------- |
-| Huorong      | NO  | NO                 | BASE             | High     |
-| Kaspersky    | YES | YES                | BASE, PDM        | Medium   |
-| Malwarebytes | YES | NO                 | BASE, DDS        | High     |
+| Huorong      | No  | No                 | BASE             | High     |
+| Kaspersky    | Yes | Yes                | BASE, PDM        | Medium   |
+| Malwarebytes | Yes | No                 | BASE, DDS        | High     |
