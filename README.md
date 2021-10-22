@@ -18,7 +18,7 @@ Each subfolder contains dump CSV files with vendor's name and date. File name en
 
 ### Prerequisites
 
-To run PowerShell Script
+To run PowerShell script
 
 1. Download Windows Sysinternals and add to `PATH` or install from [Microsoft Store](https://www.microsoft.com/en-us/p/sysinternals-suite/9p7knl5rwt25).
 
