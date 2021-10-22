@@ -32,8 +32,8 @@ To run PowerShell Script
 
 ## List of Supported Vendors <a name = "list_of_vendors"></a>
 
-| Name         | PPL | Need to Disable SP | Detection Source |
-| ------------ | --- | ------------------ | ---------------- |
-| Huorong      | No  | No                 | BASE             |
-| Kaspersky    | Yes | Yes                | BASE, PDM        |
-| Malwarebytes | Yes | No                 | BASE, DDS        |
+| Name         | PPL | Need to Disable SP | Detection Source | Accuracy |
+| ------------ | --- | ------------------ | ---------------- | -------- |
+| Huorong      | NO  | NO                 | BASE             | High     |
+| Kaspersky    | YES | YES                | BASE, PDM        | Medium   |
+| Malwarebytes | YES | NO                 | BASE, DDS        | High     |
