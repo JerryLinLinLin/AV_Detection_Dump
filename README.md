@@ -10,7 +10,7 @@
 
 ## About <a name = "about"></a>
 
-This project contains the CSV files of malware detection names from antivirus software, and a PowerShell script for dumping the detection entries.
+This project contains the CSV files of malware detection names from some antivirus products, and a PowerShell script for dumping the detection entries.
 
 ## Getting Started <a name = "getting_started"></a>
 
@@ -18,11 +18,11 @@ Each subfolder contains dump CSV files with vendor's name and date. File name en
 
 ### Prerequisites
 
-To run PowerShell script
+To run the PowerShell script:
 
-1. Download Windows Sysinternals and add to `PATH` or install from [Microsoft Store](https://www.microsoft.com/en-us/p/sysinternals-suite/9p7knl5rwt25).
+1. Download the [Windows Sysinternals](https://docs.microsoft.com/sysinternals/downloads/sysinternals-suite) and add to `PATH` or install it from [Microsoft Store](https://www.microsoft.com/p/sysinternals-suite/9p7knl5rwt25).
 
-2. Disable PPL(Protected Processes Light) using [PPLKiller](https://github.com/Mattiwatti/PPLKiller).
+2. Disable the PPL (Protected Processes Light) using [PPLKiller](https://github.com/Mattiwatti/PPLKiller), or use Microsoft Windows 7 (it does not serve the PPL).
 
 3. Disable Self-Protection Module of AV if possible.
 
