@@ -1,4 +1,4 @@
-# Antivirus Detection Dump
+# Antivirus Detection Name Dump
 
 ## Table of Contents
 
