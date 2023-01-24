@@ -4,19 +4,19 @@
 .DESCRIPTION
 	Dump an Antivirus software's detection name
 .PARAMETER Name
-    Choose an Antivirus: Huorong | Kaspersky | Malwarebytes
+    Choose an Antivirus: Huorong | Kaspersky | Malwarebytes | ESET
 #>
 
 #Requires -Version 4.0
 #Requires -RunAsAdministrator
 
 Param(
-   [Parameter(Mandatory)]
-   [validateset("Huorong","Kaspersky", "Malwarebytes")]
-   [string]$Name
+    [Parameter(Mandatory)]
+    [validateset("Huorong", "Kaspersky", "Malwarebytes", "ESET")]
+    [string]$Name
 )
 
-$TimeStamp = (Get-Date).ToString('MM-dd-yyyy-hh-mm-ss')
+$TimeStamp = (Get-Date).ToString('yyyy-MM-dd_hh-mm-ss')
 New-Item -ItemType Directory -Force $Name
 
 $FileName = "$Name-$TimeStamp"
@@ -25,6 +25,20 @@ $StringPath = "$FileName.txt"
 
 
 switch ($Name) {
+    ESET {
+        procdump.exe -ma "ekrn.exe" $DumpPath
+        strings.exe -nobanner -n 3 "$FileName.dmp" > $StringPath
+
+        $OutputPath = "$FileName-BASE.txt"
+        select-string -Path $StringPath -Pattern "^@[a-zA-Z]{3,}\.[a-zA-Z]{2,}.+" -AllMatches | ForEach-Object { $_.Matches } | ForEach-Object { $_.Value } > $OutputPath
+        select-string -Path $StringPath -Pattern "^[a-zA-Z]{3,}\d*/[a-zA-Z]{2,}\.[^|]" -AllMatches | ForEach-Object { $_.Matches } | ForEach-Object { $_.Value } >> $OutputPath
+        select-string -Path $StringPath -Pattern "^[a-zA-Z]{3,}\d*/[a-zA-Z]{2,}$" -AllMatches | ForEach-Object { $_.Matches } | ForEach-Object { $_.Value } >> $OutputPath
+
+        $ResultPath = "$Name/$FileName-BASE.csv"
+        Get-Content $OutputPath | Sort-Object | get-unique > $ResultPath
+
+        Remove-Item $OutputPath
+    }
     Huorong {
         $Regex = "^[A-Z][^/.=]{0,30}[/][A-Za-z]*[.][^/=]{0,20}$"
 
